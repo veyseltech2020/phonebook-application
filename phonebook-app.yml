@@ -60,7 +60,7 @@ Resources:
                 pip3 install flask_mysql
                 echo "${MyDBURI}" > /home/ec2-user/dbserver.endpoint
                 TOKEN="c71105edbcf4fd0a214306ac023f37cf8e149c01"
-                FOLDER="https://$TOKEN@raw.githubusercontent.com/serdarcw/004-Phonebook-web-app-EU/master/"
+                FOLDER="https://$TOKEN@raw.githubusercontent.com/veyseltech2020/phonebook-application/master/"
                 curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"templates/index.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/add-update.html" -L "$FOLDER"templates/add-update.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/delete.html" -L "$FOLDER"templates/delete.html
@@ -86,12 +86,12 @@ Resources:
       SecurityGroups:
         - !GetAtt ALBSecurityGroup.GroupId
       Subnets:
-        - subnet-077c9758
-        - subnet-3246e63c
-        - subnet-3ccd235a
-        - subnet-8d8dbfb3
-        - subnet-c41ba589
-        - subnet-ed49bccc
+        - subnet-2ac8b967
+        - subnet-1f973679
+        - subnet-af21baa1
+        - subnet-b5d47b94
+        - subnet-6d4abf5c
+        - subnet-5d258702
       Type: application
 
   ALBListener:
@@ -136,7 +136,7 @@ Resources:
       AllowMajorVersionUpgrade: false 
       AutoMinorVersionUpgrade: true
       BackupRetentionPeriod: 0
-      DBInstanceIdentifier: phonebook-app-db2
+      DBInstanceIdentifier: phonebook-app-db
       DBName: phonebook
       DBSecurityGroups: 
         - !Ref MyDBSecurityGroup
@@ -144,7 +144,7 @@ Resources:
       DBInstanceClass: db.t2.micro #Required
       EngineVersion: 8.0.19
       MasterUsername: admin
-      MasterUserPassword: Serdar_1
+      MasterUserPassword: Veysel_210
       MultiAZ: false
       Port: 3306
       PubliclyAccessible: true
